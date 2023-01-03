@@ -1,6 +1,12 @@
 import { ThemeProvider } from '@mui/material'
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom'
 import './App.css'
+import Mainpage from './components/pages/Mainpage'
 import theme from './styles'
 
 const App: React.FC = () => {
@@ -9,12 +15,11 @@ const App: React.FC = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <div className='App'>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-          <div>hello</div>
-        </div>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Mainpage />}></Route>
+          </Routes>
+        </Router>
       </ThemeProvider>
     </>
   )

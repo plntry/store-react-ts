@@ -1,17 +1,17 @@
 import { createTheme } from '@mui/material'
 
 export const Colors = {
-  primary: '#00adb5',
-  secondary: '#00c7c0',
+  primary: '#5a31e0',
+  secondary: '#7047f5',
   success: '#4caf50',
-  info: '#00d5ff',
+  info: '#913be3',
   danger: '#FF5722',
   warning: '#FFC107',
-  dark: '#22414d',
-  light: '#aaa',
+  dark: '#1f124d',
+  light: '#baabed',
   muted: '#abafb3',
   border: '#DDDFE1',
-  inverse: '#2F3D4A',
+  inverse: '#a5ce1f',
   shaft: '#333',
   dove_gray: '#d5d5d5',
   body_bg: '#f3f6f9',
