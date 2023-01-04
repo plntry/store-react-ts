@@ -15,10 +15,11 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined'
 import MoreIcon from '@mui/icons-material/MoreVert'
+import Button from '@mui/material/Button'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
-  borderRadius: theme.shape.borderRadius,
+  borderRadius: '18px 18px',
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25)
@@ -58,6 +59,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Header: React.FC = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null)
+
+  const navItems = ['Home', 'Catalog', 'About']
 
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
@@ -170,7 +173,7 @@ const Header: React.FC = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ fontFamily: 'Roboto Condensed', fontWeight: '700', display: { xs: 'none', sm: 'block' } }}
+            sx={{ fontWeight: '700', display: { xs: 'none', sm: 'block' } }}
           >
             STORE
           </Typography>
@@ -179,10 +182,18 @@ const Header: React.FC = () => {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
+              sx={{ fontFamily: 'Roboto Condensed' }}
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            {navItems.map((item) => (
+              <Button key={item} sx={{ fontWeight: '400', color: '#fff' }}>
+                {item}
+              </Button>
+            ))}
+          </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">

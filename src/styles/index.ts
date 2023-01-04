@@ -24,7 +24,54 @@ export const Colors = {
 const overrides: Strings = {
   palette: {},
   components: {
-
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          color: Colors.white,
+          fontFamily: 'Roboto Condensed'
+        }
+      }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: Colors.white,
+          fontFamily: 'Roboto Condensed'
+        }
+      }
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'Roboto Condensed'
+        }
+      }
+    },
+    MuiBadge: {
+      styleOverrides: {
+        badge: {
+          color: Colors.primary,
+          fontWeight: '800',
+          backgroundColor: Colors.inverse
+        }
+      }
+    },
+    MuiSearch: {
+      styleOverrides: {
+        root: {
+          // color: Colors.primary,
+          fontWeight: '800',
+          borderRadius: '10rem'
+          // backgroundColor: Colors.inverse
+        },
+        input: {
+          // color: Colors.primary,
+          fontWeight: '800',
+          borderRadius: '10rem',
+          backgroundColor: Colors.inverse
+        }
+      }
+    }
   }
 }
 
