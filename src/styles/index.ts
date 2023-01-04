@@ -36,7 +36,8 @@ const overrides: Strings = {
       styleOverrides: {
         root: {
           color: Colors.white,
-          fontFamily: 'Roboto Condensed'
+          fontFamily: 'Roboto Condensed',
+          borderRadius: '18px 18px'
         }
       }
     },
@@ -52,22 +53,6 @@ const overrides: Strings = {
         badge: {
           color: Colors.primary,
           fontWeight: '800',
-          backgroundColor: Colors.inverse
-        }
-      }
-    },
-    MuiSearch: {
-      styleOverrides: {
-        root: {
-          // color: Colors.primary,
-          fontWeight: '800',
-          borderRadius: '10rem'
-          // backgroundColor: Colors.inverse
-        },
-        input: {
-          // color: Colors.primary,
-          fontWeight: '800',
-          borderRadius: '10rem',
           backgroundColor: Colors.inverse
         }
       }

@@ -16,6 +16,7 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined'
 import MoreIcon from '@mui/icons-material/MoreVert'
 import Button from '@mui/material/Button'
+import { Link } from '@mui/material'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -189,9 +190,11 @@ const Header: React.FC = () => {
           </Search>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ fontWeight: '400', color: '#fff' }}>
-                {item}
-              </Button>
+                <Link underline='none' key={item} href={`/${item.toLowerCase()}`}>
+                    <Button key={item} sx={{ fontWeight: '400', color: '#fff' }}>
+                        {item}
+                    </Button>
+                </Link>
             ))}
           </Box>
           <Box sx={{ flexGrow: 1 }} />
