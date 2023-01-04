@@ -23,7 +23,9 @@ export const Colors = {
 
 const overrides: Strings = {
   palette: {},
-  components: {}
+  components: {
+
+  }
 }
 
 const getNewPalette = (colors: Strings) => {

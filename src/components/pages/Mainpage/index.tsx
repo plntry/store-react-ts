@@ -5,6 +5,50 @@ const Mainpage: React.FC = () => {
       <>
         <Header />
         <>mainpage</>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
+        <div>mainpage</div>
       </>
   )
 }
