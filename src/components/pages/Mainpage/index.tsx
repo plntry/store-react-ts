@@ -4,51 +4,6 @@ const Mainpage: React.FC = () => {
   return (
       <>
         <Header />
-        <>mainpage</>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
-        <div>mainpage</div>
       </>
   )
 }
