@@ -56,6 +56,15 @@ const overrides: Strings = {
           backgroundColor: Colors.inverse
         }
       }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          color: Colors.primary,
+          fontWeight: '800',
+          backgroundColor: Colors.inverse
+        }
+      }
     }
   }
 }

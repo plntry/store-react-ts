@@ -1,3 +1,4 @@
+import { Box } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { selectProducts } from '../../store/productsSlice'
 import ProductItem from '../ProductItem'
@@ -8,7 +9,7 @@ const ProductsList: React.FC = () => {
   //   console.log(products?[products], 'pro')
 
   return (
-    <>
+    <Box sx={{ display: 'grid' }} component='div'>
       {(products).map((product: any) => {
         return (
             <ProductItem
@@ -23,7 +24,7 @@ const ProductsList: React.FC = () => {
             />
         )
       })}
-    </>
+    </Box>
   )
 }
 
