@@ -170,14 +170,16 @@ const Header: React.FC = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ fontWeight: '700', display: { xs: 'none', sm: 'block' } }}
-          >
-            STORE
-          </Typography>
+          <Link underline='none' href={`/${navItems[0].toLowerCase()}`}>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ fontWeight: '700', display: { xs: 'none', sm: 'block' } }}
+            >
+              STORE
+            </Typography>
+          </Link>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
