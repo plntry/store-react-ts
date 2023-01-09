@@ -7,7 +7,7 @@ export const Colors = {
   info: '#913be3',
   danger: '#FF5722',
   warning: '#FFC107',
-  dark: '#1f124d',
+  dark: '#2c1c63',
   light: '#baabed',
   muted: '#abafb3',
   border: '#DDDFE1',
@@ -60,9 +60,8 @@ const overrides: Strings = {
     MuiCard: {
       styleOverrides: {
         root: {
-          color: Colors.primary,
-          fontWeight: '800',
-          backgroundColor: Colors.inverse
+          color: Colors.dark,
+          fontWeight: '800'
         }
       }
     }
