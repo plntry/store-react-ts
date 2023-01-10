@@ -14,3 +14,7 @@ interface IProduct {
 interface IProducts {
   products: IProduct[] | undefined
 }
+
+interface ICategories {
+  categories: string[] | undefined
+}

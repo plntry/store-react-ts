@@ -61,7 +61,15 @@ const overrides: Strings = {
       styleOverrides: {
         root: {
           color: Colors.dark,
-          fontWeight: '800'
+          fontWeight: '800',
+          borderRadius: '18px 18px'
+        }
+      }
+    },
+    MuiCardActionArea: {
+      styleOverrides: {
+        root: {
+          borderRadius: '18px 18px'
         }
       }
     }

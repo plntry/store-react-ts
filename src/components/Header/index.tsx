@@ -1,22 +1,14 @@
-import * as React from 'react'
-import { styled, alpha } from '@mui/material/styles'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
-import InputBase from '@mui/material/InputBase'
-import Badge from '@mui/material/Badge'
-import MenuItem from '@mui/material/MenuItem'
-import Menu from '@mui/material/Menu'
+import React, { useState, useEffect } from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined'
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined'
 import MoreIcon from '@mui/icons-material/MoreVert'
-import Button from '@mui/material/Button'
-import { Link } from '@mui/material'
+import { alpha, AppBar, Badge, Box, IconButton, InputBase, Link, Menu, MenuItem, styled, Toolbar, Typography } from '@mui/material'
+import HeaderMenu from '../HeaderMenu'
+import { useAppDispatch } from '../../store'
+import { fetchCategories } from '../../store/categoriesSlice'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -58,10 +50,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }))
 
 const Header: React.FC = () => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null)
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState<null | HTMLElement>(null)
 
   const navItems = ['Home', 'Catalog', 'About']
+
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchCategories())
+  }, [dispatch])
 
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
@@ -128,7 +126,7 @@ const Header: React.FC = () => {
             <ShoppingBagOutlinedIcon />
           </Badge>
         </IconButton>
-        <p>Messages</p>
+        <p>Cart</p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -190,15 +188,7 @@ const Header: React.FC = () => {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-                <Link underline='none' key={item} href={`/${item.toLowerCase()}`}>
-                    <Button key={item} sx={{ fontWeight: '400', color: '#fff' }}>
-                        {item}
-                    </Button>
-                </Link>
-            ))}
-          </Box>
+          <HeaderMenu navItems={navItems} />
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">

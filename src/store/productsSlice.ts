@@ -1,23 +1,20 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { RootState } from '.'
-// import { getData } from '../services/pr-service'
+import { baseUrl } from '../constants'
 
 const initialState: IProducts = {
   products: []
 }
-
-const dataUrl = 'https://fakestoreapi.com'
 
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts', async (_, thunkAPI) => {
     let data
     try {
       await axios
-        .get(`${dataUrl}/products`)
+        .get(`${baseUrl}/products`)
         .then((res) => {
           data = res.data
-          console.log(res.data, 'res data')
         })
         .catch((err) => { console.log(err) })
       if (data) return data
