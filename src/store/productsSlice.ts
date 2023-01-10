@@ -1,10 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 import { RootState } from '.'
 import { baseUrl } from '../constants'
+import { selectCategories } from './categoriesSlice'
 
-const initialState: IProducts = {
-  products: []
+const initialState: IProductsSliceInitState = {
+  products: [],
+  selectedCategory: ''
 }
 
 export const fetchProducts = createAsyncThunk(
@@ -12,9 +15,10 @@ export const fetchProducts = createAsyncThunk(
     let data
     try {
       await axios
-        .get(`${baseUrl}/products`)
+        .get(`${baseUrl}/products/${''}`)
         .then((res) => {
           data = res.data
+          console.log()
         })
         .catch((err) => { console.log(err) })
       if (data) return data
@@ -28,8 +32,19 @@ const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    add: (state, action) => {
-      console.log(state)
+    filterByCategory: (state, action) => {
+      state.selectedCategory = action.payload.toLowerCase()
+      console.log(state.selectedCategory, 'selected')
+      // if (state.products.find(el => el.id === action.payload).quantity === 1) {
+      //       state.products = state.products.filter(el => el.id !== action.payload)
+
+      //       state.totalQuantity--
+      //     } else {
+      //       state.products.find(el => el.id === action.payload).quantity--
+      //       state.products.find(el => el.id === action.payload).totalPrice = state.products.find(el => el.id === action.payload).price * state.products.find(el => el.id === action.payload).quantity
+
+      //       state.totalQuantity--
+      //     }
     }
     // addItemToCart: (state, action) => {
     //   if (state.products.some(el => el.id === action.payload.id)) {
@@ -71,6 +86,7 @@ const productsSlice = createSlice({
       builder.addCase(fetchProducts.fulfilled, (state, action) => {
         state.products = action.payload
         console.log(state.products, 'extra')
+        // console.log(getState().selectedCategory, 'selll')
       })
       builder.addCase(fetchProducts.rejected, (state, action) => {
         console.log(action.payload, 'rejected')
@@ -78,10 +94,8 @@ const productsSlice = createSlice({
     }
 })
 
-export const { add } = productsSlice.actions
+export const { filterByCategory } = productsSlice.actions
 export const selectProducts = (state: RootState) => state.products
 // export const selectTotalQuantity = (state) => state.cart.totalQuantity
-
-export const productsActions = productsSlice.actions
 
 export default productsSlice

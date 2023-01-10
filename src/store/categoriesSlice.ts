@@ -43,6 +43,8 @@ const categoriesSlice = createSlice({
     }
 })
 
+// export const { selectCategory } = categoriesSlice.actions
+
 export const selectCategories = (state: RootState) => state.categories
 
 export default categoriesSlice

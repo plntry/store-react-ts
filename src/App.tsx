@@ -21,7 +21,7 @@ const App: React.FC = () => {
         <Router>
           <Routes>
             <Route path='/' element={<Mainpage />}></Route>
-            <Route path='/catalog' element={<Catalog />}></Route>
+            <Route path='catalog' element={<Catalog />}></Route>
           </Routes>
         </Router>
       </ThemeProvider>

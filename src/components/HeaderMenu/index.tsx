@@ -1,11 +1,23 @@
 import { List, Menu, MenuItem, ListItem, ListItemText } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { useAppDispatch } from '../../store'
 import { selectCategories } from '../../store/categoriesSlice'
+import { filterByCategory } from '../../store/productsSlice'
 
 const HeaderMenu: React.FC<Strings> = ({ navItems }: Strings) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const [selectedIndex, setSelectedIndex] = React.useState(0)
+
+  const dispatch = useAppDispatch()
+
+  let catalogMenuItems = ['All products', ...Object.values(useSelector(selectCategories))[0]]
+
+  catalogMenuItems = catalogMenuItems.map((item: string) => item.charAt(0).toUpperCase() + item.slice(1))
+
+  useEffect(() => {
+    dispatch(filterByCategory(catalogMenuItems[selectedIndex]))
+  }, [dispatch, selectedIndex])
 
   const open = Boolean(anchorEl)
 
@@ -24,10 +36,6 @@ const HeaderMenu: React.FC<Strings> = ({ navItems }: Strings) => {
   const handleClose = () => {
     setAnchorEl(null)
   }
-
-  let catalogMenuItems = ['All products', ...Object.values(useSelector(selectCategories))[0]]
-
-  catalogMenuItems = catalogMenuItems.map((item: string) => item.charAt(0).toUpperCase() + item.slice(1))
 
   return (
     <>

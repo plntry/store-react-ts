@@ -15,6 +15,11 @@ interface IProducts {
   products: IProduct[] | undefined
 }
 
+interface IProductsSliceInitState {
+  products: IProduct[] | undefined
+  selectedCategory: string
+}
+
 interface ICategories {
   categories: string[] | undefined
 }
